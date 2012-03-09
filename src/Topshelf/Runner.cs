@@ -20,6 +20,7 @@ namespace Topshelf
 	/// <summary>
 	/// Entry point into the Host infrastructure
 	/// </summary>
+	[Obsolete("Use the HostFactory class instead.")]
 	public static class Runner
 	{
 		/// <summary>
