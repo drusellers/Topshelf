@@ -16,6 +16,7 @@ namespace Topshelf.Logging
     using System.Diagnostics;
 
 
+    [DebuggerDisplay("{_name}")]
     public class LogLevel
     {
         public static readonly LogLevel All = new LogLevel("All", 6, SourceLevels.All, TraceEventType.Verbose);
