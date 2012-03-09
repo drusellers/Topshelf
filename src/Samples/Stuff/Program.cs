@@ -23,9 +23,10 @@ namespace Stuff
         static void Main(string[] args)
         {
             XmlConfigurator.ConfigureAndWatch(new FileInfo(".\\log4net.config"));
-
-            Host h = HostFactory.New(x =>
+           
+            HostFactory.Run(x =>
                 {
+                    x.UseLog4Net();
                     x.Service<TownCrier>(s =>
                         {
                             s.SetServiceName("TownCrier");
@@ -40,8 +41,6 @@ namespace Stuff
                     x.SetDisplayName("Stuff");
                     x.SetServiceName("stuff");
                 });
-
-            h.Run();
         }
     }
 }
